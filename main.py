@@ -39,11 +39,28 @@ def add_user(users: list) -> None:
 # add_user(data_of_users)
 #
 def delete_user(users: list) -> None:
-    name:str=input('Enter a name of the user to remove:')
+    name: str = input('Enter a name of the user to remove:')
     for user in users:
-        if user['name']==name:
+        if user['name'] == name:
             users.remove(user)
+
 
 #     read(data_of_users)
 #
 # delete_user(data_of_users)
+def update_user(users: list) -> None:
+    name: str = input("Enter a name of the user to update: ")
+    for user in users:
+        if user['name'] == name:
+            new_name: str = input('Enter a new name of the user:')
+            user['name'] = new_name
+            new_surname: str = input('Enter a new surname of the user:')
+            user['surname'] = new_surname
+            new_posts: int = int(input('Enter a new number of posts of the user:'))
+            user['posts'] = new_posts
+            new_location: str = input('Enter a new location of the user:')
+            user['location'] = new_location
+
+update_user(data_of_users)
+read(data_of_users)
+
