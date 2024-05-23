@@ -28,7 +28,6 @@ def add_user(users: list) -> None:
     :return: 
     """""
 
-
     name: str = input('Enter your name:')
     surname: str = input('Enter your surname:')
     posts: int = int(input('Enter number of your posts:'))
@@ -36,6 +35,15 @@ def add_user(users: list) -> None:
     new_user: dict = {'name': name, 'surname': surname, 'posts': posts, 'location': location}
     users.append(new_user)
 
-add_user(data_of_users)
-read(data_of_users)
 
+# add_user(data_of_users)
+#
+def delete_user(users: list) -> None:
+    name:str=input('Enter a name of the user to remove:')
+    for user in users:
+        if user['name']==name:
+            users.remove(user)
+
+#     read(data_of_users)
+#
+# delete_user(data_of_users)
